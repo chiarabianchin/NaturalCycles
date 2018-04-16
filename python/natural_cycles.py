@@ -91,7 +91,7 @@ def natural_cycles():
     ax10 = plt.subplot(111)
     df_preg_do.pivot_table('Age', index='CyclesTrying', columns = [bin_logt, 'ExitStatus'],
                     aggfunc='count').plot(logy=True, ax=ax10, colormap='Accent')
-
+    ax10.set_ylabel("# per cycle")
 
     sex_f = pd.cut(df_preg['SexLogFreq'], [0.05, 0.15, 0.30, 0.45, 0.60, 0.8, 1])
     plt.figure("Cycles trying vs Age -SexLogFreq- Pregnant")
